@@ -29,7 +29,7 @@
     $ git clone <https://github.com/KayoSilva19/app-Cadastro-Login-FireBase>
 
     # Acesse a pasta do projeto no terminal/cmd
-    $ cd appFirebase
+    $ cd app-Cadastro-Login-FireBase
 
     $ npm install
 
