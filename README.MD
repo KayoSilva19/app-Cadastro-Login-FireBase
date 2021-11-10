@@ -16,7 +16,7 @@
     </ul>
     
 </br>
-    <img id="logo" src="./src/img/imgCad.png" alt="Logo Do Projeto" width="300" />
+    <img id="logo" src="./src/img/imgCad1.png" alt="Logo Do Projeto" width="300" />
     <img id="logo1" src="./src/img/imgLogin.png" alt="Logo Do Projeto" width="300" />
 </br>
 </br>
