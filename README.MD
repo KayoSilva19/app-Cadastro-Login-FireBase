@@ -6,7 +6,7 @@
 <hr>
 </br>
     <h3 aling="center"> Projeto realizado seguindo aulas!</h3>
-    <p> Projeto que realiza cadastro e login salvando essas informações no banco de dados FireBase </p>
+    <p> Projeto que realiza cadastro e login salvando as informações no banco de dados FireBase </p>
     </br>
     <P> Este projeto contém </p>
     <ul>
