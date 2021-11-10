@@ -85,14 +85,21 @@ export default function Login() {
                 <Text style={styles.text1}> Nenhum usuario esta logado </Text>
             )}
 
-            <View style={styles.viewBtn}>
-                <Button 
-                    title="Voltar para o Cadastro"
-                    onPress={voltar}
-                />
-            </View>
+            {user.length == 0 ? (
 
-            
+                <View style={styles.viewBtn}>
+                    <Button
+                        title="Voltar para o Cadastro"
+                        onPress={voltar}
+                    />
+                </View>
+
+            ) :
+                (
+                  <View/>
+                )}
+
+
 
         </View>
     );

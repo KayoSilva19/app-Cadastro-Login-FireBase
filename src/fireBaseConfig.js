@@ -3,14 +3,13 @@ import 'firebase/database';
 import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA7-mrOoMTPheYJ6SsjS2UjNIvagLngiXI",
-    authDomain: "meuapp-cec4c.firebaseapp.com",
-    databaseURL: "https://meuapp-cec4c-default-rtdb.firebaseio.com",
-    projectId: "meuapp-cec4c",
-    storageBucket: "meuapp-cec4c.appspot.com",
-    messagingSenderId: "706571188441",
-    appId: "1:706571188441:web:bad5cb01d9bb23c1ac66c8",
-    measurementId: "G-T3HSH3L99T"
+    apiKey: "AIzaSyBwUveUbCxE_u5l9XrSBF_dDQuhwoSnJZM",
+    authDomain: "meuapp-c9f3d.firebaseapp.com",
+    projectId: "meuapp-c9f3d",
+    storageBucket: "meuapp-c9f3d.appspot.com",
+    messagingSenderId: "125280902009",
+    appId: "1:125280902009:web:20650263c07d53c5086da8",
+    measurementId: "G-ELVC4ENHJY"
   };
   
   // Initialize Firebase

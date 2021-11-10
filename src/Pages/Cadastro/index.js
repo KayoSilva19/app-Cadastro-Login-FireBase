@@ -11,32 +11,40 @@ export default function Cadastro() {
   const [password, setPassword] = useState('');
   const inputFocus = useRef(null)
   const [visible, setVisible] = useState(true)
+  const [nome, setNome] = useState('');
 
   const navigation = useNavigation();
 
 
-  async function cadastrar(){
+  async function cadastrar() {
     await firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then( (value) => {
-      alert("Usuario Criado: " + value.user.email);
-      navigation.navigate('Login')
-    })
-    .catch( (error) => {
-      if(error.code === 'auth/weak-password'){
-        alert("Sua senha deve ter pelo menos 6 caracteres");
-        return;
-      }
-      if(error.code === 'auth/invalid-email'){
-        alert('Email invalido');
-         return;
-      }else{
-        alert("Ops algo deu errado!")
-        return;
-      }
-    })
+      .then((value) => {
+        firebase.database().ref('usuarios').child(value.user.uid).set({
+          nome: nome,
+          email: email,
+          password: password
+          
+        })
+        alert("Usuario Criado: " + value.user.email);
+        navigation.navigate('Login');
+      })
+      .catch((error) => {
+        if (error.code === 'auth/weak-password') {
+          alert("Sua senha deve ter pelo menos 6 caracteres");
+          return;
+        }
+        if (error.code === 'auth/invalid-email') {
+          alert('Email invalido');
+          return;
+        } else {
+          alert("Ops algo deu errado!")
+          return;
+        }
+      })
 
     setEmail('');
     setPassword('');
+    setNome('');
     Keyboard.dismiss();
     inputFocus.current.focus();
 
@@ -44,13 +52,20 @@ export default function Cadastro() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.texto}> Nome </Text>
+      <TextInput
+        style={styles.input}
+        underlineColorAndroid="transparent"
+        onChangeText={(nome) => setNome(nome)}
+        value={nome}
+        ref={inputFocus}
+      />
       <Text style={styles.texto}> Email </Text>
       <TextInput
         style={styles.input}
         underlineColorAndroid="transparent"
         onChangeText={(texto) => setEmail(texto)}
         value={email}
-        ref={inputFocus}
       />
       <Text style={styles.texto}> Senha </Text>
       <TextInput
@@ -77,10 +92,10 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10
   },
-  texto:{
+  texto: {
     fontSize: 20
   },
-  input:{
+  input: {
     marginBottom: 10,
     padding: 10,
     borderWidth: 1,
